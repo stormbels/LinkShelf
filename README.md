@@ -229,7 +229,17 @@ While building LinkShelf, I practiced:
 The demo will show the main user flow:
 
 ```text
-create link → validate URL → handle duplicate/broken states → search → edit → delete with confirmation
+create link
+  ↓
+validate URL
+  ↓
+handle duplicate / broken states
+  ↓
+search saved links
+  ↓
+edit link
+  ↓
+delete with confirmation
 ```
 
 ---
