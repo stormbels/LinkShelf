@@ -1,0 +1,60 @@
+{{define "state-dialogs"}}
+{{if .ErrorType}}
+<dialog class="state-dialog" id="stateDialog" data-state="{{.ErrorType}}">
+    <div class="state-panel" role="alert">
+        {{if eq .ErrorType "duplicate"}}
+        <img src="/static/img/duplicate-link.png" alt="Capybara duplicate link state">
+
+        <div class="state-actions">
+            <button class="state-primary-button duplicate-edit-button" type="button">Yes, edit it</button>
+            <button class="state-secondary-button state-close-button" type="button">No, keep it</button>
+        </div>
+        {{else if eq .ErrorType "invalid-create"}}
+        <img src="/static/img/invalid-url.png" alt="Capybara invalid URL state">
+
+        <div class="state-actions">
+            <button class="state-primary-button invalid-create-edit-button" type="button">Back to edit</button>
+        </div>
+        {{else if eq .ErrorType "invalid-edit"}}
+        <img src="/static/img/invalid-url-restore.png" alt="Capybara invalid URL restore state">
+
+        <div class="state-actions">
+            <button class="state-primary-button invalid-edit-edit-button" type="button">Back to edit</button>
+            <button class="state-secondary-button state-close-button" type="button">Keep working link</button>
+        </div>
+        {{else if eq .ErrorType "broken-create"}}
+        <img src="/static/img/broken-link.png" alt="Capybara broken link state">
+
+        <div class="state-actions">
+            <button class="state-primary-button broken-create-edit-button" type="button">Back to edit</button>
+        </div>
+        {{else if eq .ErrorType "broken-edit"}}
+        <img src="/static/img/broken-url-restore.png" alt="Capybara broken URL restore state">
+
+        <div class="state-actions">
+            <button class="state-primary-button broken-edit-edit-button" type="button">Back to edit</button>
+            <button class="state-secondary-button state-close-button" type="button">Keep working link</button>
+        </div>
+        {{end}}
+    </div>
+</dialog>
+{{end}}
+
+{{if .SuccessType}}
+<dialog class="state-dialog" id="successDialog" data-state="{{.SuccessType}}">
+    <div class="state-panel" role="alert">
+        {{if eq .SuccessType "created"}}
+        <img src="/static/img/link-created.png" alt="Goblin new link saved success state">
+        {{else if eq .SuccessType "updated"}}
+        <img src="/static/img/link-updated.png" alt="Goblin link updated success state">
+        {{else if eq .SuccessType "deleted"}}
+        <img src="/static/img/link-deleted.png" alt="Goblin and capybara link deleted success state">
+        {{end}}
+
+        <div class="state-actions">
+            <button class="state-primary-button success-close-button" type="button">Nice</button>
+        </div>
+    </div>
+</dialog>
+{{end}}
+{{end}}

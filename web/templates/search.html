@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkShelf — Search</title>
+    <link rel="stylesheet" href="/static/css/styles.css?v=2">
+</head>
+<body>
+<div class="page-shell search-page-shell">
+    <header class="top-bar search-top-bar">
+        <span aria-hidden="true"></span>
+
+        <a class="top-link" href="/">Back to shelf</a>
+    </header>
+
+    <main class="search-page">
+        <section class="search-home-card">
+            <p class="eyebrow">Search results</p>
+            <h1>{{if .IsSelected}}Selected treasure{{else if .Query}}Treasures matching “{{.Query}}”{{else}}Search your shelf{{end}}</h1>
+            <p class="search-home-copy">
+                Find saved links by title, URL, or tags. Try any fragment like loc, ost, 81, go, docs.
+            </p>
+
+        </section>
+
+        {{template "search-results-section" .}}
+        {{template "search-edit-modal" .}}
+        {{template "search-delete-confirm-dialog" .}}
+        {{template "search-error-dialog" .}}
+        {{template "search-success-dialog" .}}
+    </main>
+</div>
+
+<script src="/static/js/focus-navigation.js?v=2"></script>
+<script src="/static/js/edit-link-modal.js?v=2"></script>
+<script src="/static/js/delete-confirm-dialog.js?v=2"></script>
+<script src="/static/js/search-url-state.js?v=2"></script>
+<script src="/static/js/search-edit-modal.js?v=2"></script>
+<script src="/static/js/search.js?v=2"></script>
+</body>
+</html>

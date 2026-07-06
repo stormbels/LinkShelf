@@ -1,0 +1,48 @@
+{{define "link-modal-fields"}}
+<label class="modal-label" for="{{.}}-url">URL</label>
+<input class="link-input" id="{{.}}-url" name="url" type="text">
+
+<label class="modal-label" for="{{.}}-title">Title</label>
+<input class="link-input" id="{{.}}-title" name="title" type="text" placeholder="Treasure title">
+
+<label class="modal-label" for="{{.}}-tags">Tags</label>
+<input class="link-input" id="{{.}}-tags" name="tags" type="text" placeholder="go, docs, inspiration">
+{{end}}
+{{define "link-modals"}}
+<dialog class="link-modal" id="linkModal">
+    <form class="link-modal-form" method="post" action="/links">
+        <div class="modal-header">
+            <p class="eyebrow">link details</p>
+            <button class="modal-close" type="button" aria-label="Close">×</button>
+        </div>
+
+        <h2 class="modal-title">New treasure on the shelf</h2>
+        <p class="modal-description">Add a title and tags before saving this link</p>
+
+        {{template "link-modal-fields" "modal"}}
+
+        <div class="modal-actions">
+            <button class="link-button" type="submit">Save link</button>
+        </div>
+    </form>
+</dialog>
+
+<dialog class="link-modal" id="editLinkModal">
+    <form class="link-modal-form" id="editLinkForm" method="post">
+        <div class="modal-header">
+            <p class="eyebrow">edit treasure</p>
+            <button class="edit-modal-close" type="button" aria-label="Close">×</button>
+        </div>
+
+        <h2 class="modal-title">Edit link</h2>
+        <p class="modal-description">Change the URL, title, or tags for this saved treasure</p>
+
+        {{template "link-modal-fields" "edit-modal"}}
+
+        <div class="modal-actions">
+            <button class="modal-secondary-button edit-modal-close" type="button">Cancel</button>
+            <button class="link-button" type="submit">Save changes</button>
+        </div>
+    </form>
+</dialog>
+{{end}}

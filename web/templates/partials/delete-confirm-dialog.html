@@ -1,0 +1,12 @@
+{{define "delete-confirm-dialog"}}
+<dialog class="state-dialog" id="deleteConfirmDialog">
+    <div class="state-panel" role="alert">
+        <img src="/static/img/delete-confirm.png" alt="Goblin and capybara delete confirmation state">
+
+        <div class="state-actions">
+            <button class="state-secondary-button delete-cancel-button" type="button">No, keep it</button>
+            <button class="state-primary-button delete-confirm-button" type="button">Yes, delete it</button>
+        </div>
+    </div>
+</dialog>
+{{end}}

@@ -1,0 +1,19 @@
+{{define "search-success-dialog"}}
+{{if .SuccessType}}
+<dialog class="state-dialog" id="successDialog" data-state="{{.SuccessType}}">
+    <div class="state-panel" role="alert">
+        {{if eq .SuccessType "created"}}
+        <img src="/static/img/link-created.png" alt="Goblin new link saved success state">
+        {{else if eq .SuccessType "updated"}}
+        <img src="/static/img/link-updated.png" alt="Goblin link updated success state">
+        {{else if eq .SuccessType "deleted"}}
+        <img src="/static/img/link-deleted.png" alt="Goblin and capybara link deleted success state">
+        {{end}}
+
+        <div class="state-actions">
+            <button class="state-primary-button success-close-button" type="button">Nice</button>
+        </div>
+    </div>
+</dialog>
+{{end}}
+{{end}}

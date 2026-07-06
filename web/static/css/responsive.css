@@ -1,0 +1,50 @@
+@media (max-width: 820px) {
+    .page {
+        padding: 20px;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .link-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 820px) {
+    .meme-section {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .links-list {
+        grid-template-columns: 1fr;
+    }
+
+    .saved-link-card {
+        min-height: 260px;
+        padding: 22px;
+    }
+
+    .home-side-panel,
+    .empty-state-card,
+    .shelf-status {
+        min-height: auto;
+    }
+
+    .empty-state-card {
+        text-align: center;
+    }
+
+    .empty-state-card img {
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .modal-actions,
+    .state-actions {
+        flex-direction: column-reverse;
+    }
+}

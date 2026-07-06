@@ -1,0 +1,27 @@
+{{define "search-edit-modal"}}
+<dialog class="link-modal" id="editLinkModal">
+    <form class="link-modal-form" id="editLinkForm" method="post">
+        <div class="modal-header">
+            <p class="eyebrow">edit treasure</p>
+            <button class="edit-modal-close" type="button" aria-label="Close">×</button>
+        </div>
+
+        <h2 class="modal-title">Edit link</h2>
+        <p class="modal-description">Change the URL, title, or tags for this saved treasure</p>
+
+        <label class="modal-label" for="edit-modal-url">URL</label>
+        <input class="link-input" id="edit-modal-url" name="url" type="text">
+
+        <label class="modal-label" for="edit-modal-title">Title</label>
+        <input class="link-input" id="edit-modal-title" name="title" type="text">
+
+        <label class="modal-label" for="edit-modal-tags">Tags</label>
+        <input class="link-input" id="edit-modal-tags" name="tags" type="text">
+
+        <div class="modal-actions">
+            <button class="modal-secondary-button edit-modal-close" type="button">Cancel</button>
+            <button class="link-button" type="submit" disabled>Save changes</button>
+        </div>
+    </form>
+</dialog>
+{{end}}

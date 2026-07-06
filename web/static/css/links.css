@@ -1,0 +1,27 @@
+.links-section {
+    margin-top: clamp(22px, 2.8vw, 34px);
+    padding: clamp(20px, 2.3vw, 28px);
+    border: 1px solid rgba(85, 255, 217, 0.32);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.links-header {
+    margin-bottom: 18px;
+}
+
+.links-title {
+    margin: 0;
+    color: #fff7ff;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1;
+    text-shadow:
+            3px 3px 0 #6c4cff,
+            0 0 18px rgba(255, 121, 216, 0.22);
+}
+
+.links-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}

@@ -1,0 +1,30 @@
+{{define "search-error-dialog"}}
+{{if .ErrorType}}
+<dialog class="state-dialog state-dialog-error" id="searchStateDialog" data-state="{{.ErrorType}}">
+    <div class="state-panel" role="alert">
+        {{if eq .ErrorType "duplicate"}}
+        <img src="/static/img/duplicate-link.png" alt="Capybara duplicate link state">
+
+        <div class="state-actions">
+            <button class="state-primary-button search-duplicate-edit-button" type="button">Yes, edit it</button>
+            <button class="state-secondary-button state-close-button" type="button">No, keep it</button>
+        </div>
+        {{else if eq .ErrorType "invalid-edit"}}
+        <img src="/static/img/invalid-url-restore.png" alt="Capybara invalid URL restore state">
+
+        <div class="state-actions">
+            <button class="state-primary-button search-invalid-edit-button" type="button">Back to edit</button>
+            <button class="state-secondary-button state-close-button" type="button">Keep working link</button>
+        </div>
+        {{else if eq .ErrorType "broken-edit"}}
+        <img src="/static/img/broken-url-restore.png" alt="Capybara broken URL restore state">
+
+        <div class="state-actions">
+            <button class="state-primary-button search-broken-edit-button" type="button">Back to edit</button>
+            <button class="state-secondary-button state-close-button" type="button">Keep working link</button>
+        </div>
+        {{end}}
+    </div>
+</dialog>
+{{end}}
+{{end}}

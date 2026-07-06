@@ -1,0 +1,65 @@
+.state-dialog {
+    width: min(760px, calc(100vw - 32px));
+    padding: 0;
+    border: 1px solid rgba(255, 121, 216, 0.48);
+    border-radius: 28px;
+    background:
+            radial-gradient(circle at top left, rgba(255, 78, 205, 0.16), transparent 38%),
+            rgba(13, 10, 34, 0.96);
+    color: #fff7ff;
+    box-shadow:
+            0 28px 90px rgba(0, 0, 0, 0.55),
+            0 0 42px rgba(255, 78, 205, 0.16);
+}
+
+.state-dialog::backdrop {
+    background: rgba(5, 4, 18, 0.74);
+    backdrop-filter: blur(5px);
+}
+
+.state-panel {
+    padding: 14px;
+}
+
+.state-panel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 121, 216, 0.30);
+    background: rgba(8, 6, 24, 0.42);
+}
+
+.state-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.state-primary-button,
+.state-secondary-button {
+    flex: 1;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.state-primary-button {
+    border: 1px solid rgba(85, 255, 217, 0.46);
+    background: rgba(85, 255, 217, 0.10);
+    color: #55ffd9;
+}
+
+.state-secondary-button {
+    border: 1px solid rgba(255, 121, 216, 0.50);
+    background: rgba(255, 78, 205, 0.10);
+    color: #ff79d8;
+}
+
+.state-primary-button:hover,
+.state-secondary-button:hover {
+    transform: translateY(-1px);
+}

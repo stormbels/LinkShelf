@@ -1,0 +1,42 @@
+{{define "links-section"}}
+{{if .Links}}
+<section class="links-section" aria-label="Saved links">
+    <div class="links-header">
+        <p class="eyebrow">saved links</p>
+        <h2 class="links-title">Your shelf</h2>
+    </div>
+
+    <div class="links-list" id="linksList">
+        {{range .Links}}
+        <article class="saved-link-card">
+            <h3>{{.Title}}</h3>
+            <a href="{{.URL}}" target="_blank" rel="noopener noreferrer">{{.URL}}</a>
+
+            {{if .Tags}}
+            <div class="tag-row">
+                {{range .Tags}}
+                <span>{{.}}</span>
+                {{end}}
+            </div>
+            {{end}}
+
+            <div class="card-actions">
+                <button class="edit-button" type="button"
+                        data-id="{{.ID}}"
+                        data-url="{{.URL}}"
+                        data-title="{{.Title}}"
+                        data-tags="{{range $index, $tag := .Tags}}{{if $index}}, {{end}}{{$tag}}{{end}}">
+                    Edit
+                </button>
+
+                <form class="delete-form" method="post" action="/links/{{.ID}}/delete">
+                    <button class="delete-button" type="submit">Delete</button>
+                </form>
+            </div>
+        </article>
+        {{end}}
+    </div>
+
+</section>
+{{end}}
+{{end}}

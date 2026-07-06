@@ -1,0 +1,21 @@
+.search-results-card {
+    padding: clamp(20px, 2.6vw, 30px);
+    border: 1px solid rgba(85, 255, 217, 0.32);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.search-results-list {
+    margin-top: 18px;
+}
+
+.search-result-card {
+    min-height: 260px;
+}
+
+.search-no-results-card {
+    width: min(760px, 100%);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,27 @@
+{{define "shelf-status"}}
+<aside class="home-side-panel" aria-label="Shelf state">
+    {{if .Links}}
+    <div class="shelf-status">
+        <p class="eyebrow">shelf status</p>
+
+        <div class="status-row">
+            <span class="status-icon">▱</span>
+            <span>Saved links</span>
+            <strong>{{len .Links}}</strong>
+        </div>
+
+        <div class="status-row">
+            <span class="status-icon">▣</span>
+            <span>Mode</span>
+            <strong>Memory</strong>
+        </div>
+
+        <p class="status-note">Your digital treasures are safe here</p>
+    </div>
+    {{else}}
+    <div class="empty-state-card">
+        <img src="/static/img/empty-state.png" alt="Capybara with an empty links state">
+    </div>
+    {{end}}
+</aside>
+{{end}}

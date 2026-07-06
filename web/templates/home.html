@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkShelf</title>
+    <link rel="stylesheet" href="/static/css/styles.css?v=2">
+</head>
+<body>
+    <main class="page">
+        <section class="home">
+            <div class="top-bar">
+                <p class="eyebrow home-top-eyebrow">personal link archive</p>
+
+                <form class="top-search" role="search" id="searchForm" action="/search" method="get">
+                    <label class="visually-hidden" for="search">Search links</label>
+                    <span class="search-icon">⌕</span>
+                    <input id="search" name="q" type="search" placeholder="Search by title, URL, or tags" autocomplete="off">
+                    <div class="search-suggestions" id="searchSuggestions" hidden></div>
+                </form>
+            </div>
+
+            <div class="home-grid">
+                <div class="home-content">
+                    <h1 class="home-title">LinkShelf</h1>
+                    <p class="home-description">
+                        Save useful links, organize your digital finds, and return to them later
+                    </p>
+
+                    {{template "state-dialogs" .}}
+                    <form class="link-form" id="quickLinkForm">
+                        <label class="visually-hidden" for="url">Link URL</label>
+                        <input class="link-input" id="url" name="url" type="text" placeholder="https://example.com">
+                        <button class="link-button" type="submit">Add link</button>
+                    </form>
+
+                    {{template "link-modals" .}}
+                    {{template "delete-confirm-dialog" .}}
+                </div>
+                {{template "shelf-status" .}}
+            </div>
+            {{template "meme-section" .}}
+            {{template "links-section" .}}
+        </section>
+    </main>
+    {{template "home-scripts" .}}
+</body>
+</html>

@@ -1,0 +1,111 @@
+.saved-link-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    padding: 22px;
+    border: 1px solid rgba(255, 121, 216, 0.55);
+    border-radius: 24px;
+    background:
+            linear-gradient(180deg, rgba(255, 121, 216, 0.18), rgba(85, 255, 217, 0.08)),
+            rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.04);
+}
+
+.saved-link-card::before {
+    content: "✦";
+    width: fit-content;
+    height: auto;
+    margin-bottom: 38px;
+    color: #ff79d8;
+    font-size: 22px;
+    line-height: 1;
+    text-shadow:
+            24px 0 0 #ffd166,
+            48px 0 0 #55ffd9,
+            0 0 12px rgba(255, 121, 216, 0.38);
+}
+
+.saved-link-card::after {
+    content: "saved item";
+    order: 1;
+    display: block;
+    margin-bottom: 12px;
+    color: #55ffd9;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.saved-link-card h3 {
+    order: 2;
+    margin: 0 0 10px;
+    color: #fff7ff;
+    font-size: 30px;
+    line-height: 1.05;
+}
+
+.saved-link-card a {
+    order: 3;
+    display: block;
+    overflow: hidden;
+    color: #d8d2ff;
+    font-size: 18px;
+    line-height: 1.35;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.saved-link-card a:hover {
+    color: #55ffd9;
+}
+
+.saved-link-card .tag-row {
+    order: 4;
+    margin-top: 18px;
+}
+
+.card-actions {
+    order: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.edit-button,
+.delete-button {
+    width: fit-content;
+    padding: 11px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.edit-button {
+    border: 1px solid rgba(85, 255, 217, 0.42);
+    background: rgba(85, 255, 217, 0.08);
+    color: #55ffd9;
+}
+
+.delete-button {
+    border: 1px solid rgba(255, 121, 216, 0.48);
+    background: rgba(255, 78, 205, 0.10);
+    color: #ff79d8;
+}
+
+.edit-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(85, 255, 217, 0.70);
+    background: rgba(85, 255, 217, 0.14);
+    box-shadow: 0 0 18px rgba(85, 255, 217, 0.14);
+}
+
+.delete-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 121, 216, 0.72);
+    background: rgba(255, 78, 205, 0.18);
+    box-shadow: 0 0 18px rgba(255, 78, 205, 0.16);
+}

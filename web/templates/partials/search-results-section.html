@@ -1,0 +1,46 @@
+{{define "search-results-section"}}
+<section class="shelf-card search-results-card">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Found shelf</p>
+        </div>
+    </div>
+
+    {{if .Links}}
+    <div class="links-list">
+        {{range .Links}}
+        <article class="saved-link-card">
+            <h3>{{.Title}}</h3>
+            <a href="{{.URL}}" target="_blank" rel="noopener noreferrer">{{.URL}}</a>
+
+            {{if .Tags}}
+            <div class="tag-row">
+                {{range .Tags}}
+                <span>{{.}}</span>
+                {{end}}
+            </div>
+            {{end}}
+
+            <div class="card-actions">
+                <button class="edit-button" type="button"
+                        data-id="{{.ID}}"
+                        data-url="{{.URL}}"
+                        data-title="{{.Title}}"
+                        data-tags="{{range $index, $tag := .Tags}}{{if $index}}, {{end}}{{$tag}}{{end}}">
+                    Edit
+                </button>
+
+                <form class="delete-form" method="post" action="/links/{{.ID}}/delete">
+                    <button class="delete-button" type="submit">Delete</button>
+                </form>
+            </div>
+        </article>
+        {{end}}
+    </div>
+    {{else}}
+    <div class="no-results-card search-no-results-card">
+        <img src="/static/img/no-treasures-found.png" alt="Capybara no search results state">
+    </div>
+    {{end}}
+</section>
+{{end}}
